@@ -1,0 +1,20 @@
+doctype html
+html
+	head
+		title Wolfram Alpha
+		link(rel="stylesheet", href="/style.css")
+	body
+		#hide(style="display:none")
+			iframe(src="https://www.wolframalpha.com/")
+			.close(onclick="hideHide()") X
+		.container
+			#messages
+				- foreach (msg; history)
+					.message
+						.sender= msg[0]
+						- import vibe.textfilter.markdown;
+						.msg!= filterMarkdown(msg[1], MarkdownFlags.backtickCodeBlocks | MarkdownFlags.forumDefault)
+			.input
+				textarea#input(type="text", placeholder="Type Here, press 'Shift-A' to toggle hide")
+		script(src="/marked.js")
+		script(src="/chat.js")

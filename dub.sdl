@@ -1,0 +1,6 @@
+name "cheatingsite2"
+description "A simple vibe.d server application."
+authors "webfreak"
+copyright "Copyright © 2018, webfreak"
+license "proprietary"
+dependency "vibe-d" version="~>0.8.2"
